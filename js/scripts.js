@@ -46,10 +46,7 @@ const previousButtonElement = document.getElementById('previous-button');
 const wordsArray = ['Adrian', 'lucha', 'contra', 'la burocracia', 'española'];
 let currentIndex = 0; //indice de la palabra actual
 
-// console.dir(nextButtonElement);
-// console.dir(previousButtonElement);
-// console.dir(changeTitleElement);
-changeTitleElement.textContent = wordsArray[currentIndex];
+changeTitleElement.textContent = wordsArray[currentIndex]; //que empiece en la posicion 0 del array
 const nextButton = () => {
   currentIndex++; //incremento el indice
   if (currentIndex >= wordsArray.length) { //cuando llega al final del array
@@ -57,7 +54,6 @@ const nextButton = () => {
   }
   changeTitleElement.textContent = wordsArray[currentIndex]; //cambio el texto del h2
 }
-//PORQUE SALTA LA PRIMER POSICION DEL ARRAY AL PRINCIPIO?
 
 
 const previousButton = () => {
@@ -67,7 +63,7 @@ const previousButton = () => {
   }
   changeTitleElement.textContent = wordsArray[currentIndex]; //cambio el texto del h2
 }
-//PORQUE DEJA UN MOMENTO EN BLANCO
+
 
 nextButtonElement.addEventListener('click', nextButton);
 previousButtonElement.addEventListener('click', previousButton);
