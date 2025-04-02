@@ -39,8 +39,9 @@ document.addEventListener('keyup', keyUp); //llamada del evento
 //- Crea un array con 5 palabras, las que tú quieras. Añade un h2 a tu HTML. Añade dos botones con el texto previous y next respectívamente. Haz que los botones cambien el texto del h2 con las palabras del array, cuando llegues a la última volverás a la primera al pulsar el botón next y cuando estés en la primera podrás volver a la última haciendo click al botón previous.
 
 const changeTitleElement = document.getElementById('changeTitle');
-const previousButtonElement = document.getElementById('previous-button');
 const nextButtonElement = document.getElementById('next-button');
+const previousButtonElement = document.getElementById('previous-button');
+
 
 const wordsArray = ['Adrian', 'lucha', 'contra', 'la burocracia', 'española'];
 let currentIndex = 0; //indice de la palabra actual
@@ -48,7 +49,7 @@ let currentIndex = 0; //indice de la palabra actual
 // console.dir(nextButtonElement);
 // console.dir(previousButtonElement);
 // console.dir(changeTitleElement);
-
+changeTitleElement.textContent = wordsArray[currentIndex];
 const nextButton = () => {
   currentIndex++; //incremento el indice
   if (currentIndex >= wordsArray.length) { //cuando llega al final del array
@@ -60,9 +61,9 @@ const nextButton = () => {
 
 
 const previousButton = () => {
-  currentIndex--; //retrocede el indice
+  currentIndex--; //retrocede el indices
   if (currentIndex < 0) { //cuando llega al final del array
-  currentIndex = wordsArray.length; //salta al final
+  currentIndex = wordsArray.length-1; //salta al final
   }
   changeTitleElement.textContent = wordsArray[currentIndex]; //cambio el texto del h2
 }
